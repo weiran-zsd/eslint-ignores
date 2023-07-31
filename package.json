@@ -1,18 +1,19 @@
 {
-  "name": "@weiran.zsd/js-starter",
+  "name": "@weiran.zsd/eslint-ignores",
   "version": "0.0.0",
   "private": false,
-  "description": "A full featured node.js starter.",
+  "description": "eslint ignore files automatically.",
   "keywords": [
-    "Node.js",
-    "template",
     "eslint",
+    "eslint-plugin",
+    "gitignore",
     "esm"
   ],
   "license": "MIT",
   "author": "唯然<weiran.zsd@outlook.com",
   "type": "module",
   "exports": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "files": [
     "LICENSE",
     "README.md",
@@ -20,33 +21,28 @@
     "!**/*.test.{js,ts}"
   ],
   "scripts": {
-    "lint": "eslint lib",
+    "lint": "eslint .",
     "prepare": "husky install",
-    "prettier": "prettier -w lib",
+    "prettier": "prettier -w ./*.js ./lib/*.js",
     "release": "npm test && standard-version",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
-    "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watch"
-  },
-  "eslintConfig": {
-    "env": {
-      "mocha": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:node/recommended"
-    ]
+    "test:typings": "tsc",
+    "test:unit": "node tests/index.spec.js"
   },
   "devDependencies": {
+    "@eslint/js": "^8.45.0",
+    "@tsconfig/node-lts": "^18.12.3",
+    "@tsconfig/node20": "^20.1.0",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/node": "^20.4.4",
     "cross-env": "^7.0.3",
-    "eslint": "^8.3.0",
-    "eslint-plugin-node": "^11.1.0",
+    "eslint": "^8.45.0",
     "husky": "^7.0.4",
-    "jest": "^27.4.3",
     "lint-staged": "^12.1.2",
     "prettier": "^2.3.2",
-    "standard-version": "^9.3.0"
+    "standard-version": "^9.3.0",
+    "typescript": "^5.1.6"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   }
 }

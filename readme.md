@@ -1,31 +1,28 @@
-# Node.js starter
+# eslint-ignores
 
 ## Usage
 
 ```sh
-$ npx degit weiran.zsd/starter
+$ npm install @weiran.zsd/eslint-ignores -D
 ```
 
-```sh
-# run linting
-$ npm run lint [-- --fix]
+```js
+// eslint.config.js
+import js from "@eslint/js";
+import { ignores } from "@weiran.zsd/eslint-ignores";
 
-# run test
-$ npm test
-
-# watching test
-$ npm run test:watch
-
-# release
-$ npm run release
+export default [js.configs.recommended, ignores()];
 ```
 
-## Features
+## Options
 
-* Node.js esm
-* prettier
-* eslint + eslint-plugin-node
-* pre-commit with husky
-* release with standard-version
-* testing with jest
-* gh actions
+TODO - add options
+
+
+## Credits
+
+* [aladdin-add](https://github.com/aladdin-add)
+
+## License
+
+MIT.
