@@ -1,0 +1,52 @@
+{
+  "name": "@weiran.zsd/js-starter",
+  "version": "0.0.0",
+  "private": false,
+  "description": "A full featured node.js starter.",
+  "keywords": [
+    "Node.js",
+    "template",
+    "eslint",
+    "esm"
+  ],
+  "license": "MIT",
+  "author": "唯然<weiran.zsd@outlook.com",
+  "type": "module",
+  "exports": "./lib/index.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib",
+    "!**/*.test.{js,ts}"
+  ],
+  "scripts": {
+    "lint": "eslint lib",
+    "prepare": "husky install",
+    "prettier": "prettier -w lib",
+    "release": "npm test && standard-version",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watch"
+  },
+  "eslintConfig": {
+    "env": {
+      "mocha": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:node/recommended"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.3.0",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.3.2",
+    "standard-version": "^9.3.0"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
