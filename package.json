@@ -12,6 +12,7 @@
   "license": "MIT",
   "author": "唯然<weiran.zsd@outlook.com",
   "type": "module",
+  "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "files": [
@@ -26,7 +27,8 @@
     "prettier": "prettier -w ./*.js ./lib/*.js",
     "release": "npm test && standard-version",
     "test:typings": "tsc",
-    "test:unit": "node tests/index.spec.js"
+    "test:unit": "node tests/index.spec.js",
+    "test": "npm run test:typings && npm run test:unit"
   },
   "devDependencies": {
     "@eslint/js": "^8.45.0",
@@ -44,5 +46,9 @@
   },
   "engines": {
     "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
