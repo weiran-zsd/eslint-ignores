@@ -13,7 +13,13 @@
   "author": "唯然<weiran.zsd@outlook.com",
   "type": "module",
   "main": "./lib/index.js",
-  "exports": "./lib/index.js",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.js",
+      "typings": "./lib/index.d.ts"
+    }
+  },
   "typings": "./lib/index.d.ts",
   "files": [
     "LICENSE",
