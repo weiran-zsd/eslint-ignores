@@ -4,7 +4,8 @@
     "allowJs": true,
     "checkJs": true,
     "declaration": true,
-    "noEmit": true
+    "noEmit": true,
+    "incremental": true
   },
   "include": ["lib/", "tests/index.spec.js"]
 }
